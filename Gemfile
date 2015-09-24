@@ -15,7 +15,7 @@ group :development do
   gem 'spring'
 end
 gem 'bootstrap-sass'
-gem 'mysql2'
+gem 'mysql2', '~>0.3.13'
 gem 'therubyracer', :platform=>:ruby
 group :development do
   gem 'better_errors'
