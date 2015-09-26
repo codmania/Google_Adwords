@@ -7,6 +7,11 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+# AdWords API gem.
+gem 'google-adwords-api', '~> 0.14.0'
+# Gem for OAuth authorization.
+gem 'oauth2'
+
 group :development, :test do
   gem 'byebug'
 end

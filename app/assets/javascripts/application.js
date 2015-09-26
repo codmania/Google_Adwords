@@ -12,6 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+//= require js/jquery-1.10.2.js
+//= require js/bootstrap.min.js
+//= require js/plugins/metisMenu/jquery.metisMenu.js
+//= require js/plugins/morris/raphael-2.1.0.min.js
+//= require js/plugins/morris/morris.js
+//= require js/mint-admin.js
+//= require js/demo/dashboard-demo.js

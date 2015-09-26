@@ -4,17 +4,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Adwords" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Adwords" %>">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'application'  %>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-    </main>
+    <div id="global-header">
+      <% account_text = (@selected_account.nil?) ? 'Not selected' : @selected_account %>
+      <span>Active account: <%= account_text %></span>
+    </div>
+
+    <div id="global-alers">
+      <% if flash[:alert] %>
+        <div class="alert"><%= flash[:alert] %></div>
+      <% end %>
+      <% if flash[:notice] %>
+        <div class="notice"><%= flash[:notice] %></div>
+      <% end %>
+    </div>
+
+    <%= yield %>
+
+    <div id="global-footer">
+      <span class="small-print"><%= link_to('Log out', logout_path) %></span>
+    </div>
+
   </body>
 </html>
