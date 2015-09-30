@@ -46,105 +46,45 @@ class ReportsController < ApplicationController
   def real_time_stats
     binding.pry
     report_array = get_campaign_report('05 - Carter - Norther Virginia - Garage', 
-      '05 - Carter - Norther Virginia - In Home', 'TODAY')
-    binding.pry
+      '05 - Carter - Norther Virginia - In Home', 'TODAY')    
     @report_data = report_array.last
     @report_data[:cost] = @report_data[:cost].to_f / 1000000
   end
 
   def garage_flooring
-    @keywords_yesterday = {
-      :keyword => 'hello',
-      :impressions => '300',
-      :clicks => '100',
-      :cost => '$200'
-    }
-
     rpt_array = get_adgroup_report('05 - Carter - Norther Virginia - Garage', '09 - Floor Coating', 
       '10 - Garage Flooring', @filter_value, true)
-    @report = rpt_array.last
+    @report = rpt_array.last    
+    @report[:cost] = @report[:cost].to_f / 1000000
+    rpt_array.delete_at(-1)
     @keywords = get_top_keywords(rpt_array)
   end
 
   def garage_cabinetry
-    # rpt_array = get_adgroup_report('05 - Carter - Norther Virginia - Garage', '09 - Floor Coating', 
-    #   '10 - Garage Flooring', 'YESTERDAY', false)
-    # @report_yesterday = rpt_array.last
-    # @keywords_yesterday = get_top_keywords(rpt_array)
-
-    # rpt_array = get_adgroup_report('05 - Carter - Norther Virginia - Garage', '09 - Floor Coating', 
-    #   '10 - Garage Flooring', 'LAST_7_DAYS', false)
-    # @report_last = rpt_array.last
-    # @keywords_last = get_top_keywords(rpt_array)
-
-    # rpt_array = get_adgroup_report('05 - Carter - Norther Virginia - Garage', '09 - Floor Coating', 
-    #   '10 - Garage Flooring', 'THIS_MONTH', false)
-    # @report_month = rpt_array.last
-    # @keywords_month = get_top_keywords(rpt_array)
-
-    # rpt_array = get_adgroup_report('05 - Carter - Norther Virginia - Garage', '09 - Floor Coating', 
-    #   '10 - Garage Flooring', '20150801, 20150831', false)
-    # @report_august = rpt_array.last
-    # @keywords_august = get_top_keywords(rpt_array)
-
-    # rpt_array = get_adgroup_report('05 - Carter - Norther Virginia - Garage', '09 - Floor Coating', 
-    #   '10 - Garage Flooring', '20150701, 20150731', false)
-    # @report_july = rpt_array.last
-    # @keywords_july = get_top_keywords(rpt_array)
+    rpt_array = get_adgroup_report('05 - Carter - Norther Virginia - Garage', '09 - Floor Coating', 
+      '10 - Garage Flooring', @filter_value, false)
+    @report = rpt_array.last    
+    @report[:cost] = @report[:cost].to_f / 1000000
+    rpt_array.delete_at(-1)
+    @keywords = get_top_keywords(rpt_array)
   end
 
   def in_home
-    # report_array = get_campaign_report('05 - Carter - Norther Virginia - Garage', 
-    #   '05 - Carter - Norther Virginia - Garage', 'YESTERDAY')
-    # @report_yesterday = report_array.last
-    # @keywords_yesterday = get_top_keywords(report_array)
-
-    # report_array = get_campaign_report('05 - Carter - Norther Virginia - Garage', 
-    #   '05 - Carter - Norther Virginia - Garage', 'LAST_7_DAYS')
-    # @report_last = report_array.last
-    # @keywords_last = get_top_keywords(report_array)
-
-    # report_array = get_campaign_report('05 - Carter - Norther Virginia - Garage', 
-    #   '05 - Carter - Norther Virginia - Garage', 'THIS_MONTH')
-    # @report_month = report_array.last
-    # @keywords_month = get_top_keywords(report_array)
-
-    # report_array = get_campaign_report('05 - Carter - Norther Virginia - Garage', 
-    #   '05 - Carter - Norther Virginia - Garage', '20150801, 20150831')
-    # @report_august = report_array.last
-    # @keywords_august = get_top_keywords(report_array)    
-
-    # report_array = get_campaign_report('05 - Carter - Norther Virginia - Garage', 
-    #   '05 - Carter - Norther Virginia - Garage', '20150701, 20150731')
-    # @report_july = report_array.last
-    # @keywords_july = get_top_keywords(report_array)
+    report_array = get_campaign_report('05 - Carter - Norther Virginia - Garage', 
+      '05 - Carter - Norther Virginia - Garage', @filter_value)
+    @report = report_array.last
+    @report[:cost] = @report[:cost].to_f / 1000000
+    rpt_array.delete_at(-1)
+    @keywords = get_top_keywords(report_array)
   end
 
   def all_campaigns
-    # report_array = get_campaign_report('05 - Carter - Norther Virginia - Garage', 
-    #   '05 - Carter - Norther Virginia - In Home', 'YESTERDAY')
-    # @report_yesterday = report_array.last
-    # @keywords_yesterday = get_top_keywords(report_array)
-
-    # report_array = get_campaign_report('05 - Carter - Norther Virginia - Garage', 
-    #   '05 - Carter - Norther Virginia - In Home', 'LAST_7_DAYS')
-    # @report_last = report_array.last
-    # @keywords_last = get_top_keywords(report_array)
-
-    # report_array = get_campaign_report('05 - Carter - Norther Virginia - Garage', 
-    #   '05 - Carter - Norther Virginia - In Home', 'THIS_MONTH')
-    # @report_month = report_array.last
-    # @keywords_month = get_top_keywords(report_array)
-
-    # report_array = get_campaign_report('05 - Carter - Norther Virginia - Garage', 
-    #   '05 - Carter - Norther Virginia - In Home', '20150801, 20150831')
-    # @report_august = report_array.last
-    # @keywords_august = get_top_keywords(report_array)    
-
-    # report_array = get_campaign_report('05 - Carter - Norther Virginia - Garage', 
-    #   '05 - Carter - Norther Virginia - In Home', '20150701, 20150731')
-    # @report_july = report_array.last
-    # @keywords_july = get_top_keywords(report_array)    
+    report_array = get_campaign_report('05 - Carter - Norther Virginia - Garage', 
+      '05 - Carter - Norther Virginia - In Home', @filter_value)
+    @report = report_array.last
+    @report[:cost] = @report[:cost].to_f / 1000000
+    rpt_array.delete_at(-1)
+    @keywords = get_top_keywords(report_array)
   end
 
   def contact_us
@@ -224,7 +164,8 @@ class ReportsController < ApplicationController
 
     top_group = Array.new
     group[1..10].each do |grp|
-      top_group << grp
+      grp[:cost] = grp[:cost].to_f / 1000000
+      top_group << grp      
     end
     binding.pry
     return top_group
@@ -233,17 +174,19 @@ class ReportsController < ApplicationController
 
   def get_date_range
     @filter = params[:filter] || 'yesterday'
+    binding.pry
     case @filter
     when 'yesterday'
       @filter_value = 'YESTERDAY'
+    when 'last_7_days'
+      @filter_value = 'LAST_7_DAYS'
+    when 'this_month'      
+      @filter_value = 'THIS_MONTH'
     when 'last_month'
-      @filter_value = "#{(Date.today - 1.months).beginning_of_month.strftime(%B %Y)} "
-    end
-    @from
-    @to
-    @filter_label = 
-
-    ['yesterday', 'this']
+      @filter_value = '#{(Date.today - 1.months).beginning_of_month.strftime("%Y%m%d")}, #{(Date.today - 1.months).end_of_month.strftime("%Y%m%d")}'
+    when 'last_2_month'
+      @filter_value = '#{(Date.today - 1.months).beginning_of_month.strftime("%Y%m%d")}, #{(Date.today - 1.months).end_of_month.strftime("%Y%m%d")}'
+    end    
   end
 
 end

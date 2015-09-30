@@ -12,51 +12,7 @@
               </tr>
             </thead>
               <tbody id="tbody-yesterday">
-                <% @keywords_yesterday.each do |key| %>
-                  <tr>
-                    <td><%= key[:keyword] %></td>
-                    <td><%= key[:clicks] %></td>
-                    <td><%= key[:impressions] %></td>
-                    <td>$<%= key[:cost] %></td>
-                  </tr>
-                <% end %>
-              </tbody>
-
-              <tbody id="tbody-last" style="display:none;">
-                <% @keywords_yesterday.each do |key| %>
-                  <tr>
-                    <td><%= key[:keyword] %></td>
-                    <td><%= key[:clicks] %></td>
-                    <td><%= key[:impressions] %></td>
-                    <td>$<%= key[:cost] %></td>
-                  </tr>
-                <% end %>    
-              </tbody>
-
-              <tbody id="tbody-month" style="display:none;">
-                <% @keywords_yesterday.each do |key| %>
-                  <tr>
-                    <td><%= key[:keyword] %></td>
-                    <td><%= key[:clicks] %></td>
-                    <td><%= key[:impressions] %></td>
-                    <td>$<%= key[:cost] %></td>
-                  </tr>
-                <% end %>
-              </tbody>
-
-              <tbody id="tbody-august" style="display:none;">
-                <% @keywords_yesterday.each do |key| %>
-                  <tr>
-                    <td><%= key[:keyword] %></td>
-                    <td><%= key[:clicks] %></td>
-                    <td><%= key[:impressions] %></td>
-                    <td>$<%= key[:cost] %></td>
-                  </tr>
-                <% end %>
-              </tbody>
-
-              <tbody id="tbody-july" style="display:none;">
-                <% @keywords_yesterday.each do |key| %>
+                <% @keywords.each do |key| %>
                   <tr>
                     <td><%= key[:keyword] %></td>
                     <td><%= key[:clicks] %></td>
