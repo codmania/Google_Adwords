@@ -1,51 +1,7 @@
-<div id="wrapper">
-  
-    <!-- /.navbar-static-side -->
-    <nav class="navbar-default navbar-static-side" role="navigation">
-        <div class="sidebar-collapse">
-            <ul class="nav" id="side-menu">
-                <li>
-                    <div class="user-info-wrapper"> 
-                        <div class="user-info-profile-image">
-                            
-                            <%= image_tag 'img/profile-1.jpg', alt: '', width: 65, height: 65 %>
-                        </div>
-                        <div class="user-info">
-                            <div class="user-welcome">Welcome</div>
-                            <div class="username">User <strong>Name</strong></div>
-                            <div class="status">Status <span class="status-now"><i class="fa fa-circle text-emerald fa"></i> Online</span> </div>
-                        </div>
-                    </div>
-                </li>
-                
-                <li>
-                    <a href="real_time_stats" class="active"><i class="fa fa-dashboard fa-fw fa-3x"></i>Real Time Stats</a>                    
-                </li>
-
-                <li>
-                    <a href="garage_flooring"><i class="fa fa-dashboard fa-fw fa-3x"></i>Garage Flooring</a>
-                </li>
-
-                <li>
-                    <a href="garage_cabinetry"><i class="fa fa-dashboard fa-fw fa-3x"></i>Garage Cabinetry</a>
-                </li>
-
-                <li>
-                    <a href="in_home"><i class="fa fa-dashboard fa-fw fa-3x"></i>In Home</a>
-                </li>
-                 
-                <li>
-                    <a href="all_campaigns"><i class="fa fa-dashboard fa-fw fa-3x"></i>All Campaigns</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-phone fa-fw fa-3x"></i> Contact Us</a>
-                </li>
-                 
-            </ul>
-            <!-- /#side-menu -->
-        </div>
-        <!-- /.sidebar-collapse -->
-    </nav>
+<div id="wrapper">  
+    
+    <%= render "nav-bar" %>
+    
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
@@ -53,15 +9,13 @@
                   <br>*** includes combined stats for campaign names<br> <b> 05 - Carter - Norther Virginia - Garage </b> <br> <b> 05 - Carter - Norther Virginia - In Home </b><br><br>
             </div>
         </div>
-        <!-- /.col-lg-12 -->
-
        
         <div class="row">
             <div class="col-xs-6 col-md-6">
                 <div class="panel panel-primary text-center panel-eyecandy">
                     <div class="panel-body nephritis">
                         <i class="fa fa-bar-chart-o fa-3x"></i>
-                        <h3>##,### </h3>
+                        <h3><%= @report_data[:impressions] %></h3>
                     </div>
                     <div class="panel-footer">
                         <span class="panel-eyecandy-title">
@@ -75,7 +29,7 @@
                 <div class="panel panel-primary text-center panel-eyecandy">
                     <div class="panel-body nephritis ">
                         <i class="fa fa-users fa-3x"></i>
-                        <h3>#,### </h3>
+                        <h3><%= @report_data[:clicks] %></h3>
                     </div>
                     <div class="panel-footer">
                         <span class="panel-eyecandy-title">
@@ -90,7 +44,7 @@
                 <div class="panel panel-primary text-center panel-eyecandy">
                     <div class="panel-body nephritis ">
                         <i class="fa fa-money fa-3x"></i>
-                        <h3>$#,###  </h3>
+                        <h3>$<%= @report_data[:cost] %></h3>
                     </div>
                     <div class="panel-footer">
                         <span class="panel-eyecandy-title">
@@ -105,7 +59,7 @@
                 <div class="panel panel-primary text-center panel-eyecandy">
                     <div class="panel-body nephritis">
                         <i class="fa fa-unsorted fa-3x"></i>
-                        <h3>#.# </h3>
+                        <h3><%= @report_data[:avg_position] %> </h3>
                     </div>
                     <div class="panel-footer">
                         <span class="panel-eyecandy-title">
@@ -118,8 +72,5 @@
         </div>
         <!-- /.row -->
     </div>
-    <!-- /#page-wrapper -->
 
 </div>
-
-

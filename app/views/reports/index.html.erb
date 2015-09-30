@@ -11,7 +11,7 @@
     <ul><li>No reports available.</ul>
   <% else %>
     <div class="report-form">
-    <%= form_tag('/report/get', :method => 'post') do %>
+    <%= form_tag('/reports/get', :method => 'post') do %>
       <div class="report-form-item">
         Report: <select name="type">
         <% @reports.each_pair do |key, report| %>

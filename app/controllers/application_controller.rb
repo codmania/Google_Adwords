@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   # Returns currently selected account.
   def selected_account
     @selected_account ||= session[:selected_account]
-    return '670-600-4734'
+    return @selected_account
   end
 
   # Sets current account to the specified one.

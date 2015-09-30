@@ -8,7 +8,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # AdWords API gem.
-gem 'google-adwords-api', '~> 0.14.0'
+gem 'google-adwords-api'
 # Gem for OAuth authorization.
 gem 'oauth2'
 
@@ -34,6 +34,7 @@ group :development, :test do
   gem 'faker'
   gem 'pry-rails'
   gem 'pry-rescue'
+  gem 'pry-nav'
   gem 'rspec-rails'
   gem 'rubocop'
 end

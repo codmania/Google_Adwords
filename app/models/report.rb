@@ -122,10 +122,11 @@ class Report < ActiveRecord::Base
 
   def self.create_definition(template, data)
     result = template.dup
-    result[:selector][:fields] = string_to_array(data['fields'])
-    result[:report_type] = data[:type]
-    result[:download_format] = data[:format]
-    result[:include_zero_impressions] = true if 'true'.eql?(data[:zeroes])
+    result[:selector][:fields] = string_to_array(data[:fields])
+    # result[:report_type] = data[:type]
+    # result[:download_format] = data[:format]
+    result[:date_range_type] = data[:date_range]
+    # result[:include_zero_impressions] = true if 'true'.eql?(data[:zeroes])
     return result
   end
 

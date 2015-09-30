@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :reports
+  # resources :reports
 
   #root to: 'reports#real_time_stats'
   root :to => "home#index"

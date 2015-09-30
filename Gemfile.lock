@@ -92,12 +92,12 @@ GEM
     ffi (1.9.10)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
-    google-ads-common (0.9.9)
+    google-ads-common (0.10.1)
       httpi (~> 1.1.0)
       savon (~> 1.2.0)
       signet (~> 0.6.0)
-    google-adwords-api (0.14.2)
-      google-ads-common (~> 0.9.8)
+    google-adwords-api (0.16.1)
+      google-ads-common (~> 0.10.1)
     gyoku (0.4.6)
       builder (>= 2.1.2)
     httpi (1.1.1)
@@ -145,6 +145,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-nav (0.2.4)
+      pry (>= 0.9.10, < 0.11.0)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
     pry-rescue (1.4.2)
@@ -286,13 +288,14 @@ DEPENDENCIES
   database_cleaner
   factory_girl_rails
   faker
-  google-adwords-api (~> 0.14.0)
+  google-adwords-api
   hub
   jbuilder (~> 2.0)
   jquery-rails
   launchy
   mysql2 (~> 0.3.13)
   oauth2
+  pry-nav
   pry-rails
   pry-rescue
   quiet_assets

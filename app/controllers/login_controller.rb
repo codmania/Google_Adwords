@@ -27,7 +27,7 @@ class LoginController < ApplicationController
             :oauth2_verification_code => params[:code]
           }
       )
-      binding.pry
+      # binding.pry
       flash.notice = 'Authorized successfully'
       redirect_to home_index_path
     rescue AdsCommon::Errors::OAuth2VerificationRequired => e
