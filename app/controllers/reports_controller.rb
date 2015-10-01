@@ -160,7 +160,7 @@ class ReportsController < ApplicationController
     group[1..10].each do |grp|
       grp[:cost] = grp[:cost].to_f / 1000000
       top_group << grp      
-    end    
+    end
     return top_group
 
   end
