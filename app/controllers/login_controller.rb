@@ -28,8 +28,9 @@ class LoginController < ApplicationController
           }
       )
       # binding.pry
-      flash.notice = 'Authorized successfully'
-      redirect_to home_index_path
+      # flash.notice = 'Authorized successfully'
+      # redirect_to home_index_path
+      redirect_to real_time_stats_path
     rescue AdsCommon::Errors::OAuth2VerificationRequired => e
       flash.alert = 'Authorization failed'
       redirect_to login_prompt_path

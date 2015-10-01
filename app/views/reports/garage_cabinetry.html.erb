@@ -20,12 +20,12 @@
                         <ul class="nav nav-tabs">
                             <% ['yesterday', 'last_7_days', 'this_month', 'last_month', 'last_2_month'].each do |filter|%>
                               <li class="<%= 'active' if filter == @filter %>" >
-                                <%= link_to filter_label(filter), garage_flooring_path(filter: filter), data: {toggle: 'tab'} %>
+                                <%= link_to filter_label(filter), garage_cabinetry_path(filter: filter), data: {toggle: 'tab-content'} %>
                               </li>
                             <% end %>
                         </ul>
 
-                        <div class="tab-content">
+                        <div class="tab-content" id="tab_dashboard">
                             <% if @filter == 'yesterday' %>
                                 <div class="tab-pane fade in active">
                                     <h4><%= filter_label(@filter) %>'s Stats - Garage Cabinetry</h4>
@@ -89,10 +89,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            <% end %>
-                            
-                            <% unless @filter == 'yesterday' %>
-                                <div class="tab-pane fade in">
+                            <% else %>
+                                <div class="tab-pane fade in active">
                                     <h4><%= filter_label(@filter) %>'s Stats - Garage Cabinetry</h4>
                                     <div class="row">
                                         <div class="col-xs-6 col-md-2">
@@ -113,7 +111,7 @@
                                             <div class="panel panel-primary text-center panel-eyecandy">
                                                 <div class="panel-body theme-color">
                                                     <i class="fa fa-unsorted fa-3x"></i>
-                                                    <h3><%= @report[:ctr] %>%</h3>
+                                                    <h3><%= @report[:ctr] %></h3>
                                                 </div>
                                                 <div class="panel-footer">
                                                     <span class="panel-eyecandy-title">

@@ -1,4 +1,4 @@
-<h1>Authorization required</h1>
+<h1 class="auth-title">Authorization required</h1>
 
 <% if flash[:alert] %>
   <div class="alert"><%= flash[:alert] %></div>
@@ -7,6 +7,7 @@
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
 
-<p>Please authorize with a google account first:</p>
+<p class="auth-subtitle">Please authorize with a google account first:</p>
 
-<p><a href="<%= @login_url %>">Proceed</a></p>
+<p class="auth-proceed"><a href="<%= @login_url %>"><i class="fa fa-sign-in"></i>
+ Proceed</a></p>

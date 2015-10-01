@@ -10,11 +10,6 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div id="global-header">
-      <% account_text = (@selected_account.nil?) ? 'Not selected' : @selected_account %>
-      <span>Active account: <%= account_text %></span>
-    </div>
-
     <div id="global-alers">
       <% if flash[:alert] %>
         <div class="alert"><%= flash[:alert] %></div>
@@ -25,10 +20,9 @@
     </div>
 
     <%= yield %>
-
-    <div id="global-footer">
-      <span class="small-print"><%= link_to('Log out', logout_path) %></span>
-    </div>
-
+    
+    <div class="small-print"><i class="fa fa-sign-out" style="color:#1abc9c;"></i>
+     <%= link_to('Log out', logout_path) %></div>
+    
   </body>
 </html>

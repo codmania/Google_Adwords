@@ -1,6 +1,7 @@
 
 div.small-print {
-  font-size: 0.75em;
+  font-size: 1em;
+  text-align: center;
 }
 
 #global-alers div {
@@ -13,17 +14,22 @@ div.small-print {
 }
 
 #global-footer {
-  margin-top: 25px;
+  margin-top: 10px;
 }
 
 #global-alers div.notice {
-  background-color: #aaf;
+  background-color: #bbb;
 }
 
 #global-alers div.alert {
-  background-color: #faa;
+  background-color: #ddd;
 }
 
 div.notice {
   font-weight: bold;
+}
+#auth-title {
+	text-align:center;
+	margin-top: 5%;
+	color: #2BBD39;
 }
