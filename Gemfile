@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'google-adwords-api'
 # Gem for OAuth authorization.
 gem 'oauth2'
+# gem 'pg'
 
 group :development, :test do
   gem 'byebug'
@@ -41,6 +42,7 @@ group :development, :test do
 end
 group :production do
   gem 'rails_12factor'
+  gem 'pg'
 end
 group :test do
   gem 'capybara'
