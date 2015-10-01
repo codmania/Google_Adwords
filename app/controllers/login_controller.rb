@@ -26,8 +26,7 @@ class LoginController < ApplicationController
             :oauth2_callback => login_callback_url,
             :oauth2_verification_code => params[:code]
           }
-      )
-      # binding.pry
+      )      
       # flash.notice = 'Authorized successfully'
       # redirect_to home_index_path
       redirect_to real_time_stats_path
