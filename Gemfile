@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'google-adwords-api'
 # Gem for OAuth authorization.
 gem 'oauth2'
+gem 'font-awesome-rails'
 # gem 'pg'
 
 group :development, :test do

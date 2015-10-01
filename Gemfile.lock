@@ -94,6 +94,8 @@ GEM
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.10)
+    font-awesome-rails (4.4.0.0)
+      railties (>= 3.2, < 5.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     google-ads-common (0.10.1)
@@ -294,6 +296,7 @@ DEPENDENCIES
   dotenv-rails
   factory_girl_rails
   faker
+  font-awesome-rails
   google-adwords-api
   hub
   jbuilder (~> 2.0)
