@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # resources :reports
 
   #root to: 'reports#real_time_stats'
-  root :to => "home#index"
+  root :to => "login#prompt"
 
   get 'real_time_stats', to: 'reports#real_time_stats', as: :real_time_stats
   get 'garage_flooring', to: 'reports#garage_flooring', as: :garage_flooring
