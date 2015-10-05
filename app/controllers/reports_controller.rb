@@ -97,10 +97,12 @@ class ReportsController < ApplicationController
 
   def get_campaign_report(campaign_name1, campaign_name2, during)
     campaign_query = "SELECT Criteria, " +
-      "Impressions, Ctr, Clicks, Cost, AveragePosition FROM KEYWORDS_PERFORMANCE_REPORT " +
+      "Impressions, SearchImpressionShare, Clicks, Cost, AveragePosition FROM KEYWORDS_PERFORMANCE_REPORT " +
       "WHERE CampaignName IN ['#{campaign_name1}', '#{campaign_name2}'] " +
       "DURING #{during} "    
     campaign_report = get_report_with_csv(campaign_query)
+
+    binding.pry
 
     return campaign_report
   end
@@ -109,17 +111,18 @@ class ReportsController < ApplicationController
 
     if exclude == true
       adgroup_query = "SELECT Criteria, " +
-        "Impressions, Ctr, Clicks, Cost, AveragePosition FROM KEYWORDS_PERFORMANCE_REPORT " +
+        "Impressions, SearchImpressionShare, Clicks, Cost, AveragePosition FROM KEYWORDS_PERFORMANCE_REPORT " +
         "WHERE CampaignName = '#{campaign_name}' AND AdGroupName IN ['#{group_name1}', '#{group_name2}'] " +
         "DURING #{during} "
     else
       adgroup_query = "SELECT Criteria, " +
-        "Impressions, Ctr, Clicks, Cost, AveragePosition FROM KEYWORDS_PERFORMANCE_REPORT " +
+        "Impressions, SearchImpressionShare, Clicks, Cost, AveragePosition FROM KEYWORDS_PERFORMANCE_REPORT " +
         "WHERE CampaignName = '#{campaign_name}' AND AdGroupName NOT_IN ['#{group_name1}', '#{group_name2}'] " +
         "DURING #{during} "
     end
 
     adgroup_report = get_report_with_csv(adgroup_query)
+    binding.pry
 
     return adgroup_report
   end  
