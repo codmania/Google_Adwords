@@ -100,9 +100,7 @@ class ReportsController < ApplicationController
       "Impressions, SearchImpressionShare, Clicks, Cost, AveragePosition FROM KEYWORDS_PERFORMANCE_REPORT " +
       "WHERE CampaignName IN ['#{campaign_name1}', '#{campaign_name2}'] " +
       "DURING #{during} "    
-    campaign_report = get_report_with_csv(campaign_query)
-
-    binding.pry
+    campaign_report = get_report_with_csv(campaign_query)   
 
     return campaign_report
   end
@@ -121,8 +119,7 @@ class ReportsController < ApplicationController
         "DURING #{during} "
     end
 
-    adgroup_report = get_report_with_csv(adgroup_query)
-    binding.pry
+    adgroup_report = get_report_with_csv(adgroup_query)    
 
     return adgroup_report
   end  
@@ -130,8 +127,7 @@ class ReportsController < ApplicationController
   def get_report_with_csv(report_query)
     @selected_account = selected_account
     return if @selected_account.nil?
-
-    # validate_data(params)
+    
     api = get_adwords_api
     report_utils = api.report_utils
     
@@ -188,5 +184,5 @@ class ReportsController < ApplicationController
       @filter_value = from + ", " + to
     end    
   end
-
+  
 end
