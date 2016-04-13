@@ -31,7 +31,4 @@ class Account < ActiveRecord::Base
     return accounts
   end
 
-  def add_child(child)
-    @child_accounts << child
-  end
 end
