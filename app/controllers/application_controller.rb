@@ -34,10 +34,6 @@ class ApplicationController < ActionController::Base
   end
 
   # Returns an API object.
-  def get_adwords_api
-    @api ||= create_adwords_api
-    return @api
-  end
 
   # Creates an instance of AdWords API class. Uses a configuration file and
   # Rails config directory.
